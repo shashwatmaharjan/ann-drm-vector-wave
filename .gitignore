@@ -1,2 +1,5 @@
+# Extensions
 *.mat
-*.m
+
+# Folders
+/data_generation
