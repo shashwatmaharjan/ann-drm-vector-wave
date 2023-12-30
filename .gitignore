@@ -1,5 +1,6 @@
 # Extensions
 *.mat
+*.npy
 
 # Folders
 /data_generation
