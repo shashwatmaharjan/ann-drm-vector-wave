@@ -4,10 +4,10 @@ clc; clear all;
 current_directory = pwd;
 
 % Define directory of the data
-% raw_data_directory = fullfile(current_directory, '..', '..', 'data_generation');
+% raw_data_directory = fullfile(current_directory, '..', '..', 'data', 'generation');
 
 % Define directory of the assembled data
-assembled_data_directory = fullfile(current_directory, '..', 'data_assembled');
+assembled_data_directory = fullfile(current_directory, '..', 'data', 'assembled');
 
 % List all the folders in the raw data directory
 raw_data_folders = dir(raw_data_directory);
