@@ -5,7 +5,6 @@ current_directory = pwd;
 
 % Define directory of the data
 % raw_data_directory = fullfile(current_directory, '..', '..', 'data_generation');
-raw_data_directory = '/media/volume/sdb/drm_vector_wave/data_generation';
 
 % Define directory of the assembled data
 assembled_data_directory = fullfile(current_directory, '..', 'data_assembled');
@@ -53,10 +52,27 @@ for n_sample = 1:length(raw_data_folders)
     
 end
 
-%% Save Data
+%% Reshape
 % Reshape the data such that the shape is: [n_samples, n_time_steps, n_sensors]
 displacement_data = permute(displacement_data, [3, 2, 1]);
 
+[num_samples, num_timesteps, num_sensors] = size(displacement_data);
+
+%% Dataset Split
+training_proportion = 0.8;
+validation_proportion = 0.1;
+test_proportion = 0.1;
+
+training_indices = training_proportion * num_samples;
+validation_indices = training_indices + validation_proportion * num_samples;
+
+training_displacement_data = displacement_data(1:training_indices, :, :);
+validation_displacement_data = displacement_data(training_indices:validation_indices-1, :, :);
+test_displacement_data = displacement_data(validation_indices+1:end, :, :);
+
+%% Save Data
 % Save the data as a .npy file
 fprintf('Saving data...\n');
-writeNPY(displacement_data, fullfile(assembled_data_directory, 'displacement_data.npy'));
+writeNPY(training_displacement_data, fullfile(assembled_data_directory, 'training_displacement_data.npy'));
+writeNPY(validation_displacement_data, fullfile(assembled_data_directory, 'validation_displacement_data.npy'));
+writeNPY(test_displacement_data, fullfile(assembled_data_directory, 'test_displacement_data.npy'));
