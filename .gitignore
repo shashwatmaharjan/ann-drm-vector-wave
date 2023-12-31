@@ -1,6 +1,7 @@
 # Extensions
 *.mat
 *.npy
+*.ipynb_checkpoints
 
 # Folders
 /data_generation
