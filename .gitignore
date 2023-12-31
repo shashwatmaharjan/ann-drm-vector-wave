@@ -4,4 +4,4 @@
 *.ipynb_checkpoints
 
 # Folders
-/data_generation
+/data
