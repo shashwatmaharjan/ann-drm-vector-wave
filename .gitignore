@@ -4,5 +4,4 @@
 *.ipynb_checkpoints
 
 # Folders
-/data/assembled/
 /data/generation/
