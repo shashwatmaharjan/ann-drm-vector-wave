@@ -115,7 +115,7 @@ def main():
     displacement_range = np.max(training_displacement_data) - np.min(training_displacement_data)
 
     # Normalize the displacement values
-    print('Normalizing the displacement values...')
+    print('Normalizing the displacement data...')
     normalized_training_displacement_data = normalize_data(training_displacement_data, displacement_mean, displacement_range)
 
     # Clear the variables to free up memory
@@ -133,7 +133,7 @@ def main():
     force_range = np.max(training_force_data) - np.min(training_force_data)
 
     # Normalize the force values
-    print('Normalizing the force values...')
+    print('Normalizing the force data...')
     normalized_training_force_data = normalize_data(training_force_data, force_mean, force_range)
     
     # Clear the variables to free up memory
