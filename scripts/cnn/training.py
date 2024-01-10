@@ -12,6 +12,7 @@ def normalize_data(data_to_be_normalized, training_mean, training_range):
 
     return normalized_data
 
+
 # Function to save files
 def save_file(values, file_name, file_directory):
     
@@ -19,6 +20,7 @@ def save_file(values, file_name, file_directory):
     np.save(os.path.join(file_directory, file_name), values)
     
     print(f'Saved {file_name} to {file_directory}')
+
 
 # CNN class
 class CNN():
@@ -86,6 +88,7 @@ class CNN():
     def summary(self):
         
         self.model.summary()
+
 
 # Define main function
 def main():
