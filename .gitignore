@@ -2,6 +2,7 @@
 *.mat
 *.npy
 *.ipynb_checkpoints
+*.h5
 
 # Folders
 /data/generation/
