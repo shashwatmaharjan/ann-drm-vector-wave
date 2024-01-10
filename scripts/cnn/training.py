@@ -90,6 +90,9 @@ class CNN():
 # Define main function
 def main():
 
+    # Clear screen
+    os.system('clear')
+
     # Define directories
     current_directory = os.getcwd()
 
@@ -101,6 +104,7 @@ def main():
 
     # Working with just the displacement data to conserve memory
     # Load the training subsets for displacement data
+    print('Loading the training subsets for displacement data...')
     training_displacement_data = np.load(os.path.join(assembled_data_directory, 'training_displacement_data.npy'))
 
     # Print the shapes of the displacement data
@@ -111,12 +115,14 @@ def main():
     displacement_range = np.max(training_displacement_data) - np.min(training_displacement_data)
 
     # Normalize the displacement values
+    print('Normalizing the displacement values...')
     normalized_training_displacement_data = normalize_data(training_displacement_data, displacement_mean, displacement_range)
 
     # Clear the variables to free up memory
     del training_displacement_data
 
     # Load the training subsets for force data
+    print('Loading the training subsets for force data...')
     training_force_data = np.load(os.path.join(assembled_data_directory, 'training_force_data.npy'))
 
     # Print the shapes of the force data
@@ -127,6 +133,7 @@ def main():
     force_range = np.max(training_force_data) - np.min(training_force_data)
 
     # Normalize the force values
+    print('Normalizing the force values...')
     normalized_training_force_data = normalize_data(training_force_data, force_mean, force_range)
     
     # Clear the variables to free up memory
