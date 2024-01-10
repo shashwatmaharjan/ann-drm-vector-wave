@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Define necessary functions
-# Define function to normalize the displacement and force dataset
+# Define function to normalize the displacement dataset
 def normalize_data(data_to_be_normalized, training_mean, training_range):
 
     normalized_data = (data_to_be_normalized - training_mean) / training_range
