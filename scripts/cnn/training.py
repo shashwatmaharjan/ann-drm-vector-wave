@@ -30,15 +30,15 @@ class CNN():
         
         # Convolutional Layers
         # First Convolutional Layer
-        x1 = tf.keras.layers.Conv1D(filters=1000, kernel_size=1, padding='same', activation='LeakyReLU')(self.input_layer)
+        x1 = tf.keras.layers.Conv1D(filters=1000, kernel_size=10, padding='same', activation='LeakyReLU')(self.input_layer)
         x1 = tf.keras.layers.BatchNormalization()(x1)
 
         # Second Convolutional Layer
-        x2 = tf.keras.layers.Conv1D(filters=1000, kernel_size=1, padding='same', activation='LeakyReLU')(x1)
+        x2 = tf.keras.layers.Conv1D(filters=1000, kernel_size=10, padding='same', activation='LeakyReLU')(x1)
         x2 = tf.keras.layers.BatchNormalization()(x2)
         
         # Third Convolutional Layer
-        x3 = tf.keras.layers.Conv1D(filters=1000, kernel_size=1, padding='same', activation='LeakyReLU')(x2)
+        x3 = tf.keras.layers.Conv1D(filters=1000, kernel_size=10, padding='same', activation='LeakyReLU')(x2)
         x3 = tf.keras.layers.BatchNormalization()(x3)
 
         return x3
@@ -127,7 +127,7 @@ def main():
     model.summary()
 
     # Train the model
-    history = model.train(normalized_training_displacement_data, normalized_training_force_data, epochs = 1, batch_size = 32)
+    history = model.train(normalized_training_displacement_data, normalized_training_force_data, epochs = 1, batch_size = 8)
 
 
 if __name__ == '__main__':
