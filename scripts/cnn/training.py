@@ -132,10 +132,10 @@ def main():
 
 if __name__ == '__main__':
     
-    # Call main function
-    main()
-
     # Change fonts and specify font size
     plt.rcParams['font.family'] = 'serif'
     plt.rcParams['mathtext.fontset'] = 'dejavuserif'
     FONT_SIZE = 12
+    
+    # Call main function
+    main()
