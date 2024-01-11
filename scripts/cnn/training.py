@@ -126,6 +126,9 @@ def main():
     # Print the model summary
     model.summary()
 
+    # Train the model
+    history = model.train(normalized_training_displacement_data, normalized_training_force_data, epochs = 1, batch_size = 32)
+
 
 if __name__ == '__main__':
     
