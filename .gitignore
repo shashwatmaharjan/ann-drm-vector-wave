@@ -8,3 +8,4 @@
 # Folders
 /data/generation/
 /cnn/hyperband_search_results
+/scripts/plot_force_response/
